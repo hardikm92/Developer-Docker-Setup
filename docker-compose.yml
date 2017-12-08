@@ -20,5 +20,3 @@ services:
    - mysql
   links:
     - mysql
-  volumes:
-    - /tmp/war/:/usr/local/tomcat/webapps/
