@@ -7,16 +7,17 @@ services:
   - "3306"
   ports:
   - "3306:3306"
-  env_file:
-  - ./env_vars
+  environment:
+  - MYSQL_ROOT_PASSWORD: root
+  - MYSQL_DATABASE: identityiq
  tomcat:
   build: ./tomcat-app/
   container_name: tomcat_server
   expose:
-  - "8080"
+   - "8080"
   ports:
    - "8080:8080"
   depends_on:
    - mysql
   links:
-    - mysql
+   - mysql
